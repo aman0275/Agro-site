@@ -3,13 +3,13 @@
 	{
 		$loginProfile = "My Profile: ". $_SESSION['Username'];
 		$logo = "glyphicon glyphicon-user";
-		if($_SESSION['Category']!= 1)
-		{
-			$link = "profile.php";
-		}
-		else {
-				$link = "../profileView.php";
-		}
+		// if($_SESSION['Category']!= 1)
+		// {
+			$link = "./Login/profile.php";
+		// }
+		// else {
+		// 		$link = "../profileView.php";
+		// }
 	}
 	else
 	{
@@ -24,8 +24,11 @@
 				<h1><a href="index.php">AgroCulture</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="../index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<li><a href="../myCart.php"><span class="glyphicon glyphicon-shopping-cart"> MyCart</a></li>
+						<li><a href="./Login/profile.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+						<?php if($_SESSION['Category'] !='1'){ ?>
+							
+							<li><a href="../myCart.php"><span class="glyphicon glyphicon-shopping-cart"> MyCart</a></li>
+						<?php } ?>
 						<li><a href="<?= $link; ?>"><span class="<?php echo $logo; ?>"></span><?php echo" ". $loginProfile; ?></a></li>
 						<li><a href="../market.php"><span class="glyphicon glyphicon-grain"> Digital-Market</a></li>
 						<li><a href="../blogView.php"><span class="glyphicon glyphicon-comment"> BLOG</a></li>

@@ -33,7 +33,58 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<?php require 'menu.php'; ?>
+
+<!-- navbar -->
+
+
+<?php
+	if(isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1)
+	{
+		$loginProfile = "My Profile: ". $_SESSION['Username'];
+		$logo = "glyphicon glyphicon-user";
+		// if($_SESSION['Category']!= 1)
+		// {
+			$link = "./profileView.php";
+		// }
+		// else {
+		// 		$link = "../profileView.php";
+		// }
+	}
+	else
+	{
+		$loginProfile = "Login";
+		$link = "../index.php";
+		$logo = "glyphicon glyphicon-log-in";
+	}
+?>
+
+<!DOCTYPE html>
+			<header id="header">
+				<h1><a href="index.php">AgroCulture</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="./Login/profile.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+						<?php if($_SESSION['Category'] !='1'){ ?>
+							
+							<li><a href="../myCart.php"><span class="glyphicon glyphicon-shopping-cart"> MyCart</a></li>
+						<?php } ?>
+						<li><a href="<?= $link; ?>"><span class="<?php echo $logo; ?>"></span><?php echo" ". $loginProfile; ?></a></li>
+						<li><a href="./market.php"><span class="glyphicon glyphicon-grain"> Digital-Market</a></li>
+						<li><a href="./blogView.php"><span class="glyphicon glyphicon-comment"> BLOG</a></li>
+					</ul>
+				</nav>
+			</header>
+
+	</body>
+</html>
+
+
+
+
+
+<!-- rest code -->
+
+
 	<body>
 
 
@@ -48,10 +99,18 @@
 							<a href="profileView.php"><img src="profileDefault.png"></a>
 							<p>Your Profile</p>
 						</section>
+						
+						<?php if ($_SESSION['Category'] ==1){?>
+							<section class="4u 12u$(small)">
+								<a href="productMenu.php?n=1" name="catSearch"><img src="search.png"></a>
+								<p>My products</p>
+							</section>
+						<?php } else {?>
 						<section class="4u 12u$(small)">
 							<a href="productMenu.php?n=1" name="catSearch"><img src="search.png"></a>
 							<p>Search according to your needs</p>
 						</section>
+						<?php } ?>
 						<section class="4u$ 12u$(small)">
 							<a href="productmenu.php?n=0"><img src="product.png"></a>
 							<p>Our products</p>
@@ -63,10 +122,10 @@
 
 
 		<!-- Footer -->
-			<!--<footer id="footer">
+			<footer id="footer">
 				<div class="container">
 					<div class="row">
-						<section class="4u 6u(medium) 12u$(small)">
+						<!-- <section class="4u 6u(medium) 12u$(small)">
 							<h3>Welcome to Digital market</h3>
 
 							<ul class="alt">
@@ -85,7 +144,7 @@
 								<li><a href="#">Deleniti eum odit nostrum eveniet.</a></li>
 								<li><a href="#">Illum consectetur quibusdam eos corporis.</a></li>
 							</ul>
-						</section>
+						</section> -->
 						<section class="4u$ 12u$(medium) 12u$(small)">
 							<h3>Contact Us</h3>
 							<ul class="icons">
@@ -112,13 +171,13 @@
 							</ul>
 						</section>
 					</div>
-					<ul class="copyright">
+					<!-- <ul class="copyright">
 						<li>&copy; Untitled. All rights reserved.</li>
 						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-					</ul>
+					</ul> -->
 				</div>
-			</footer>-->
+			</footer>
 
 
 

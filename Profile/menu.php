@@ -13,7 +13,7 @@
 
 
 	<?php
-
+    
 		if(isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1)
 		{
 			$loginProfile = "My Profile: ". $_SESSION['Username'];
@@ -27,6 +27,7 @@
 	?>
 	
 <!-- Nav -->
+        
            <nav id="menu">
                 <ul class="links">
                     <li><a href="<?php echo $link; ?>"><?php echo $loginProfile; ?></a></li>

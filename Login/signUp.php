@@ -35,7 +35,7 @@ if($length != 10)
 	die();
 }
 
-if($category == 1)
+if($category == '1')
 {
     $sql = "SELECT * FROM farmer WHERE femail='$email'";
 
@@ -105,7 +105,7 @@ if($category == 1)
     }
 }
 
-else
+if($category == '0')
 {
     $sql = "SELECT * FROM buyer WHERE bemail='$email'";
 

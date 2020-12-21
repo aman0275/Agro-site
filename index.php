@@ -4,7 +4,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>AgroCulture</title>
+		<title>AmanZon</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -18,7 +18,7 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/skel.css" />	
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
@@ -33,7 +33,7 @@
 		<!-- Banner -->
 			<section id="banner" class="wrapper">
 				<div class="container">
-				<h2>AgroCulture</h2>
+				<h2>AmanZon</h2>
 				<p>Your Product Our Market</p>
 				<br><br>
 				<center>
@@ -55,7 +55,7 @@
 			<section id="one" class="wrapper style1 align-center">
 				<div class="container">
 					<header>
-						<h2>AgroCulture</h2>
+						<h2>AmanZon</h2>
 						<p>Explore the new way of trading...</p>
 					</header>
 					<div class="row 200%">
@@ -215,15 +215,21 @@
 								<div class="row uniform">
 									<p>
 			                            <b>Category : </b>
-			                        </p>
-			                        <div class="3u 12u$(small)">
-			                            <input type="radio" id="farmer" name="category" value="1" checked="checked">
+									</p>
+									
+									<div class="3u 12u$(xsmall)">
+										<p>Enter 1 for Farmer and 0 for customers</p>
+										<input type="text" name="category" id="name" value="" placeholder="category" required/>
+									</div>
+
+			                        <!-- <div class="3u 12u$(small)">
+			                            <input type="radio" id="farmer" name="category" value="1" >
 			                            <label for="farmer">Farmer</label>
 			                        </div>
 			                        <div class="3u 12u$(small)">
 			                            <input type="radio" id="buyer" name="category" value="0">
 			                            <label for="buyer">Buyer</label>
-			                        </div>
+			                        </div> -->
 								</div>
 								<div class="row uniform">
 									<div class="3u 12u$(small)">
