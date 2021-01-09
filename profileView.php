@@ -37,143 +37,141 @@ if (!isset($_SESSION['logged_in']) or $_SESSION['logged_in'] != 1) {
 <body>
 
 
-<!-- navbar -->
+    <!-- navbar -->
 
-<?php
-	if(isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1)
-	{
-		$loginProfile = "My Profile: ". $_SESSION['Username'];
-		$logo = "glyphicon glyphicon-user";
-		// if($_SESSION['Category']!= 1)
-		// {
-			$link = "./Login/profile.php";
-		// }
-		// else {
-		// 		$link = "../profileView.php";
-		// }
-	}
-	else
-	{
-		$loginProfile = "Login";
-		$link = "../index.php";
-		$logo = "glyphicon glyphicon-log-in";
-	}
-?>
+    <?php
+    if (isset($_SESSION['logged_in']) and $_SESSION['logged_in'] == 1) {
+        $loginProfile = "My Profile: " . $_SESSION['Username'];
+        $logo = "glyphicon glyphicon-user";
+        // if($_SESSION['Category']!= 1)
+        // {
+        $link = "./Login/profile.php";
+        // }
+        // else {
+        // 		$link = "../profileView.php";
+        // }
+    } else {
+        $loginProfile = "Login";
+        $link = "../index.php";
+        $logo = "glyphicon glyphicon-log-in";
+    }
+    ?>
 
-<!DOCTYPE html>
-			<header id="header">
-				<h1><a href="index.php">AgroCulture</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="./Login/profile.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<?php if($_SESSION['Category'] !='1'){ ?>
-							
-							<li><a href="../myCart.php"><span class="glyphicon glyphicon-shopping-cart"> MyCart</a></li>
-						<?php } ?>
-						<li><a href="<?= $link; ?>"><span class="<?php echo $logo; ?>"></span><?php echo" ". $loginProfile; ?></a></li>
-						<li><a href="./market.php"><span class="glyphicon glyphicon-grain"> Digital-Market</a></li>
-						<li><a href="./blogView.php"><span class="glyphicon glyphicon-comment"> BLOG</a></li>
-					</ul>
-				</nav>
-			</header>
+    <!DOCTYPE html>
+    <header id="header">
+        <h1><a href="index.php">AgroCulture</a></h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="./Login/profile.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <?php if ($_SESSION['Category'] != '1') { ?>
 
-	</body>
+                    <li><a href="./myCart.php"><span class="glyphicon glyphicon-shopping-cart"> MyCart</a></li>
+                <?php } ?>
+                <li><a href="<?= $link; ?>"><span class="<?php echo $logo; ?>"></span><?php echo " " . $loginProfile; ?></a></li>
+                <li><a href="./market.php"><span class="glyphicon glyphicon-grain"> Digital-Market</a></li>
+                <li><a href="./blogView.php"><span class="glyphicon glyphicon-comment"> BLOG</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+
 </html>
 
 
 
 
 <!-- rest code  -->
-  
-    <section id="one" class="wrapper style1 align">
-        <div class="inner">
-            <div class="box">
-                <header>
+
+<section id="one" class="wrapper style1 align">
+    <div class="inner">
+        <div class="box">
+            <header>
+                <center>
+                    <span><img src="images/profileImages/profile0.png" class="image-circle" class="img-responsive" height="200%"></span>
+                    <br>
+                    <h2><?php echo $_SESSION['Name']; ?></h2>
+                    <h4 style="color: black;"><?php echo $_SESSION['Username']; ?></h4>
+                    <br>
+                </center>
+            </header>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <b>
+                        <font size="+1" color="black">RATINGS : </font>
+                    </b>
+                    <font size="+1"><?php echo $_SESSION['Rating']; ?></font>
+                </div>
+                <div class="col-sm-3">
+                    <b>
+                        <font size="+1" color="black">Email ID : </font>
+                    </b>
+                    <font size="+1"><?php echo $_SESSION['Email']; ?></font>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <b>
+                        <font size="+1" color="black">Mobile No : </font>
+                    </b>
+                    <font size="+1"><?php echo $_SESSION['Mobile']; ?></font>
+                </div>
+                <div class="col-sm-3">
+                    <b>
+                        <font size="+1" color="black">ADDRESS : </font>
+                    </b>
+                    <font size="+1"><?php echo $_SESSION['Addr']; ?></font>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="12u$">
+                <?php if ($_SESSION['Category'] == '1') { ?>
+
+
                     <center>
-                        <span><img src="images/profileImages/profile0.png" class="image-circle" class="img-responsive" height="200%"></span>
-                        <br>
-                        <h2><?php echo $_SESSION['Name']; ?></h2>
-                        <h4 style="color: black;"><?php echo $_SESSION['Username']; ?></h4>
-                        <br>
-                    </center>
-                </header>
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-3">
-                        <b>
-                            <font size="+1" color="black">RATINGS : </font>
-                        </b>
-                        <font size="+1"><?php echo $_SESSION['Rating']; ?></font>
-                    </div>
-                    <div class="col-sm-3">
-                        <b>
-                            <font size="+1" color="black">Email ID : </font>
-                        </b>
-                        <font size="+1"><?php echo $_SESSION['Email']; ?></font>
-                    </div>
-                    <div class="col-sm-3"></div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-3">
-                        <b>
-                            <font size="+1" color="black">Mobile No : </font>
-                        </b>
-                        <font size="+1"><?php echo $_SESSION['Mobile']; ?></font>
-                    </div>
-                    <div class="col-sm-3">
-                        <b>
-                            <font size="+1" color="black">ADDRESS : </font>
-                        </b>
-                        <font size="+1"><?php echo $_SESSION['Addr']; ?></font>
-                    </div>
-                    <div class="col-sm-3"></div>
-                </div>
-                <div class="12u$">
-                    <?php if ($_SESSION['Category'] == '1') { ?>
-
-
-                        <center>
-                            <div class="row uniform">
-                                <!-- <div class="3u 12u$(large)">
+                        <div class="row uniform">
+                            <!-- <div class="3u 12u$(large)">
                                     <a href="changePassPage.php" class="btn btn-danger" style="text-decoration: none;">Change Password</a>
                                 </div> -->
-                                <div class="4u 12u$(large)">
-                                    <a href="profileEdit.php" class="btn btn-danger" style="text-decoration: none;">Edit Profile</a>
-                                </div>
-                                <div class="4u 12u$(xsmall)">
-                                    <a href="uploadProduct.php" class="btn btn-danger" style="text-decoration: none;">Upload Product</a>
-                                </div>
-                                <div class="4u 12u$(large)">
-                                    <a href="Login/logout.php" class="btn btn-danger" style="text-decoration: none;">LOG OUT</a>
-                                </div>
+                            <div class="4u 12u$(large)">
+                                <a href="profileEdit.php" class="btn btn-danger" style="text-decoration: none;">Edit Profile</a>
                             </div>
-                        </center>
-                    <?php } else { ?>
-
-
-
-                        <div class="6u 12u$(large)">
-                            <a href="Login/logout.php" class="btn btn-danger" style="text-decoration: none;">LOG OUT</a>
+                            <div class="4u 12u$(xsmall)">
+                                <a href="uploadProduct.php" class="btn btn-danger" style="text-decoration: none;">Upload Product</a>
+                            </div>
+                            <div class="4u 12u$(large)">
+                                <a href="Login/logout.php" class="btn btn-danger" style="text-decoration: none;">LOG OUT</a>
+                            </div>
                         </div>
+                    </center>
+                <?php } else { ?>
 
 
 
-                    <?php } ?>
-                </div>
+                    <div class="6u 12u$(large)">
+                        <a href="Login/logout.php" class="btn btn-danger" style="text-decoration: none;">LOG OUT</a>
+                    </div>
+
+
+
+                <?php } ?>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
+    </div>
+</section>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 
 

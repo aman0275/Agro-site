@@ -54,7 +54,7 @@ if($category == '1')
 
     	if (mysqli_query($conn, $sql))
     	{
-    	    $_SESSION['Active'] = 0;
+    	    $_SESSION['Active'] = 1;
             $_SESSION['logged_in'] = true;
 
             $_SESSION['picStatus'] = 0;
@@ -168,5 +168,3 @@ if($category == '0')
 // 	$data = htmlspecialchars($data);
 //   	return $data;
 // }
-
-?>

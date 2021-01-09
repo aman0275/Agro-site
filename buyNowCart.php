@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'db.php';
-$pid = $_GET['pid'];
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $name = $_POST['name'];
     $city = $_POST['city'];
@@ -11,19 +11,31 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $addr = $_POST['addr'];
     $bid = $_SESSION['id'];
 
-    $sql = "INSERT INTO transaction (bid, pid, name, city, mobile, email, pincode, addr)
-                VALUES ('$bid', '$pid', '$name', '$city', '$mobile', '$email', '$pincode', '$addr')";
+    $sql = "SELECT * FROM mycart WHERE bid = '$bid'";
     $result = mysqli_query($conn, $sql);
+    while ($row = $result->fetch_array()) :
+        $pid = $row['pid'];
+        // $sql = "SELECT * FROM fproduct WHERE pid = '$pid'";
+        // $result1 = mysqli_query($conn, $sql);
+        // $row1 = $result1->fetch_array();
+        $sql = "INSERT INTO transaction (bid, pid, name, city, mobile, email, pincode, addr)
+                    VALUES ('$bid', '$pid', '$name', '$city', '$mobile', '$email', '$pincode', '$addr')";
+        $result1 = mysqli_query($conn, $sql);
+    endwhile;
+
     if ($result) {
         $_SESSION['message'] = "Order Succesfully placed! <br /> Thanks for shopping with us!!!";
         header('Location: Login/success.php');
     } else {
-        echo $result->mysqli_error();
+        echo $result1->mysqli_error();
         //$_SESSION['message'] = "Sorry!<br />Order was not placed";
         //header('Location: Login/error.php');
     }
 }
 ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -68,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <section id="two" class="wrapper style2 align-center">
                 <div class="container">
                     <center>
-                        <form method="post" action="buyNow.php?pid=<?= $pid; ?>" style="border: 1px solid black; padding: 15px;">
+                        <form method="post" action="buyNowCart.php" style="border: 1px solid black; padding: 15px;">
                             <center>
                                 <div class="row uniform">
                                     <div class="6u 12u$(xsmall)">
