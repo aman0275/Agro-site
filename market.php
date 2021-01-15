@@ -56,8 +56,8 @@ if (isset($_SESSION['logged_in']) and $_SESSION['logged_in'] == 1) {
 ?>
 
 <!DOCTYPE html>
-<header id="header">		
-	<h1><a href="index.php">AgroCulture</a></h1>
+<header id="header">
+	<h1><a href="index.php">AmanZon</a></h1>
 	<nav id="nav">
 		<ul>
 			<li><a href="./Login/profile.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>

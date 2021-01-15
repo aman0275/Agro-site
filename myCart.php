@@ -76,7 +76,7 @@ if (isset($_GET['flag'])) {
 
 	<!DOCTYPE html>
 	<header id="header">
-		<h1><a href="index.php">AgroCulture</a></h1>
+		<h1><a href="index.php">AmanZon</a></h1>
 		<nav id="nav">
 			<ul>
 				<li><a href="./Login/profile.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
@@ -124,7 +124,7 @@ if (isset($_GET['flag'])) {
 								</strong>
 
 								<div style="align:left; line-height:25px;padding-bottom:30px;font-size:18px;">
-									<?php echo "Type : " . $row1['pcat'] . ''; ?><br><?php echo "Price : " . $row1['price'] . ' /-'; ?><br>
+									<?php echo "Type : " . $row1['pcat'] . ''; ?><br><?php echo "Price : " . $row1['price'] . ' /kg -'; ?><br>
 
 							</section>
 						</div>

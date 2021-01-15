@@ -52,7 +52,7 @@ require 'db.php';
 
 	<!DOCTYPE html>
 	<header id="header">
-		<h1><a href="index.php">AgroCulture</a></h1>
+		<h1><a href="index.php">AmanZon</a></h1>
 		<nav id="nav">
 			<ul>
 				<li><a href="./Login/profile.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
@@ -189,7 +189,7 @@ function dataFilter($data)
 											</strong>
 
 											<div style="align:left; line-height:25px;padding-bottom:30px;font-size:18px;">
-												<?php echo "Type : " . $row['pcat'] . ''; ?><br><?php echo "Price : " . $row['price'] . ' /-'; ?><br>
+												<?php echo "Type : " . $row['pcat'] . ''; ?><br><?php echo "Price : " . $row['price'] . ' /kg -'; ?><br>
 
 										</section>
 									</div>
@@ -296,7 +296,7 @@ function dataFilter($data)
 															</strong>
 
 															<div style="align:left; line-height:25px;padding-bottom:30px;font-size:18px;">
-																<?php echo "Type : " . $row['pcat'] . ''; ?><br><?php echo "Price : " . $row['price'] . ' /-'; ?><br>
+																<?php echo "Type : " . $row['pcat'] . ''; ?><br><?php echo "Price : " . $row['price'] . ' /kg -'; ?><br>
 
 														</section>
 													</div>
